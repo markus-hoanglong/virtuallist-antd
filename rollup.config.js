@@ -1,21 +1,21 @@
-import typescript from 'rollup-plugin-typescript2';
-import commonjs from 'rollup-plugin-commonjs';
-import external from 'rollup-plugin-peer-deps-external';
-// import postcss from 'rollup-plugin-postcss-modules'
-import postcss from 'rollup-plugin-postcss';
-import resolve from 'rollup-plugin-node-resolve';
-import uglify from 'rollup-plugin-uglify-es';
-import url from 'rollup-plugin-url';
-import svgr from '@svgr/rollup';
+const typescript = require('rollup-plugin-typescript2')
+const commonjs = require('rollup-plugin-commonjs')
+const external = require('rollup-plugin-peer-deps-external')
+// const postcss = require('rollup-plugin-postcss-modules'
+const postcss = require('rollup-plugin-postcss')
+const resolve = require('rollup-plugin-node-resolve')
+const uglify = require('rollup-plugin-uglify-es')
+const url = require('rollup-plugin-url')
+const svgr = require('@svgr/rollup').default
 
-import simplevars from 'postcss-simple-vars';
-import nested from 'postcss-nested';
-import cssnext from 'postcss-cssnext';
-import cssnano from 'cssnano';
+const simplevars = require('postcss-simple-vars')
+const nested = require('postcss-nested')
+const cssnext = require('postcss-cssnext')
+const cssnano = require('cssnano')
 
-import pkg from './package.json';
+const pkg = require('./package.json')
 
-export default {
+module.exports = {
   input: 'src/index.tsx',
   output: [
     {
